@@ -1,1 +1,99 @@
-# Valentine-
+# <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Be My Valentine 💘</title>
+<style>
+    body {
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #ff4d6d, #ffb3c6);
+        font-family: 'Arial', sans-serif;
+        overflow: hidden;
+    }
+
+    .card {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+        color: #ff4d6d;
+        margin-bottom: 30px;
+    }
+
+    .buttons {
+        position: relative;
+        height: 120px;
+    }
+
+    button {
+        border: none;
+        cursor: pointer;
+        border-radius: 12px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    #yes {
+        padding: 20px 50px;
+        background: #ff4d6d;
+        color: white;
+        font-size: 22px;
+    }
+
+    #no {
+        position: absolute;
+        padding: 15px 35px;
+        background: #999;
+        color: white;
+        left: 180px;
+        top: 20px;
+    }
+</style>
+</head>
+
+<body>
+    <div class="card">
+        <h1>Beby 💕<br>Will you be my Valentine? 💘</h1>
+        <div class="buttons">
+            <button id="yes" onclick="yesClick()">YES 😍</button>
+            <button id="no" onmouseover="moveNo()">NO 😝</button>
+        </div>
+    </div>
+
+<script>
+    function yesClick() {
+        document.body.innerHTML = `
+            <div style="
+                height:100vh;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                background:#ff4d6d;
+                color:white;
+                font-size:40px;
+                font-family:Arial;
+                text-align:center;">
+                YAYYYY 💖🥰<br>
+                I knew it 😘💍
+            </div>
+        `;
+    }
+
+    function moveNo() {
+        const noBtn = document.getElementById("no");
+        const x = Math.random() * (window.innerWidth - 100);
+        const y = Math.random() * (window.innerHeight - 50);
+        noBtn.style.left = x + "px";
+        noBtn.style.top = y + "px";
+    }
+</script>
+</body>
+</html>
